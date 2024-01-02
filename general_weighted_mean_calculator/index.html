@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #calculator {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #result {
+            text-align: left;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="calculator">
+    <h2>Simple Calculator</h2>
+    
+    <label for="input1">Input 1:</label>
+    <input type="number" id="input1" oninput="calculate()">
+
+    <label for="input2">Input 2:</label>
+    <input type="number" id="input2" oninput="calculate()">
+
+    <label for="input3">Input 3:</label>
+    <input type="number" id="input3" oninput="calculate()">
+    
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculate() {
+        // Get the input values
+        var input1 = parseFloat(document.getElementById("input1").value) || 0;
+        var input2 = parseFloat(document.getElementById("input2").value) || 0;
+        var input3 = parseFloat(document.getElementById("input3").value) || 0;
+
+        // Calculate sum of inputs
+        var sumOfInputs = input1 + input2 + input3;
+
+        // Calculate result
+        var result = sumOfInputs / 3;
+
+        // Display result
+        document.getElementById("result").innerHTML = `
+            <p>Sum of Inputs: ${sumOfInputs}</p>
+            <p>Result: ${result}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>
